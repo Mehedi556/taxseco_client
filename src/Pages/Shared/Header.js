@@ -46,7 +46,7 @@ const Header = () => {
               <Link to="/service">Services</Link>
             </li>
             <li className="font-bold">
-              <Link to="/blog">BLOG</Link>
+              <Link to="/blog">Blog</Link>
             </li>
             {
             user?.uid ?
@@ -75,7 +75,7 @@ const Header = () => {
               <Link to="/service">Services</Link>
           </li>
           <li className="font-bold">
-            <Link to="/blog">BLOG</Link>
+            <Link to="/blog">Blog</Link>
           </li>
           {
             user?.uid ?
