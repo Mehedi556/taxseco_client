@@ -22,6 +22,7 @@ const AuthProvider = ({children}) => {
         return signInWithEmailAndPassword(auth , email , password);
     }
     const signUpFacebook = (provider) => {
+        setLoading(true);
         return signInWithPopup(auth , provider);
     }
 
@@ -46,7 +47,7 @@ const logOut = () => {
 }
 
 
-    const authInfo = { user , createUser , signIn , logOut , signUpFacebook}
+    const authInfo = { user , createUser , signIn , logOut , signUpFacebook , loading}
     return (
         <AuthContext.Provider value ={authInfo}>
             {children}
