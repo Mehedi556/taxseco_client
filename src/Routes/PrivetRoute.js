@@ -4,7 +4,7 @@ import { AuthContext } from '../Contexts/AuthProvider';
 
 const PrivetRoute = ({children}) => {
     const {user , loading} = useContext(AuthContext);
-    const location =useLocation();
+    const location = useLocation();
 
     if(loading){
         return <button className="btn btn-wide loading">loading</button>
@@ -13,7 +13,7 @@ const PrivetRoute = ({children}) => {
     if(user){
         return children;
     }else{
-        return <Navigate to ="/login" state={{from: location}} replace></Navigate>;
+        return <Navigate to="/login" state={{from: location}} replace></Navigate>;
     }
 };
 
