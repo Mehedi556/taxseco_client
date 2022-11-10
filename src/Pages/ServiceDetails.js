@@ -1,12 +1,16 @@
-import React, { useContext } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, Navigate, useLoaderData, useLocation } from 'react-router-dom';
 import { AuthContext } from '../Contexts/AuthProvider';
+import ReviewRow from './ReviewRow';
 
 const ServiceDetails = () => {
     const {user} = useContext(AuthContext);
+    const location = useLocation();
     const detail = useLoaderData();
     const {name , picture , Price , about , _id} = detail;
     // console.log(detail);
+    const [reviews , setReviews] = useState([]);
+    console.log(reviews);
 
 
     const handleReview =(event) => {
@@ -45,8 +49,14 @@ const ServiceDetails = () => {
         })
         .catch(error => console.error(error));
 
-
     }
+
+
+    useEffect( () => {
+      fetch(`http://localhost:5000/reviews`)
+      .then(res => res.json())
+      .then(data => setReviews(data))
+  } , []);
 
 
     return (
@@ -66,7 +76,43 @@ const ServiceDetails = () => {
 
 
 
-<form className='my-14' onSubmit={handleReview}>
+<div className='my-14'>
+<div className="overflow-x-auto w-full">
+  <table className="table w-full">
+   
+    <thead>
+      <tr>
+        <th>
+        <label>
+            <input type="checkbox" className="checkbox" />
+          </label>
+        </th>
+        <th>User name</th>
+        <th>Car name</th>
+        <th>email</th>
+        <th>Reviews</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+     
+    {
+        reviews.map(review => <ReviewRow key={review._id} review={review}></ReviewRow>)
+    }
+ 
+     
+    </tbody>
+    
+    
+  </table>
+</div>
+</div>
+
+
+{
+  user ?
+
+  <form className='my-14' onSubmit={handleReview}>
   
     <div className='text-center grid grid-cols-1 w-6/12 mx-auto gap-2'>
     <input type="text" placeholder="Your name" className="input input-bordered rounded-lg" name="name" defaultValue={user?.displayName} required/>
@@ -77,6 +123,18 @@ const ServiceDetails = () => {
     <button className='btn btn-outline btn-md btn w-6/12 mx-auto my-5'>Submit</button>
     </div>
 </form>
+:
+<div className='bg-slate-200 p-4 text-center rounded-xl my-14'>
+  <h1 className='font-bold text-3xl '>If you want to add Your review then please login</h1>
+ <Link to='/login' ><button className='btn btn-lg btn-outline my-5 font-bold btn-wide'>Log In</button></Link> 
+</div>
+
+}
+
+
+
+
+
 
 
 
