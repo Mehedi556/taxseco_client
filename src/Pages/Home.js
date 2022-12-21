@@ -1,5 +1,5 @@
 import React from 'react';
-import cars from '../Assets/cars.jpg';
+import cars from '../Assets/nature.jpg';
 import tick from '../Assets/usp-1.svg';
 import tick2 from '../Assets/usp-2.svg';
 import tick3 from '../Assets/usp-3.svg';
@@ -12,16 +12,19 @@ const Home = () => {
   // console.log(services);
   return (
     <div>
-      <div className="block md:flex py-14 mx-auto">
-        <img className="rounded-xl w-[400px] h-[250px]" src={cars} alt="" />
-        <div className="p-5 ">
-          <h1 className="font-bold text-2xl text-justify uppercase italic">
-            Are you looking for a car on rent ??? <br />
-            Then you are at the right place. <br /> Hi.. I'm Mehedi Hasan,I have
-            varieties of cars. <br /> From here you can rent cars at best rates.
-          </h1>
-        </div>
-      </div>
+      <div className="hero h-[100%] mt-16 mb-16" style={{ backgroundImage: `url(${cars})` }}>
+  <div className="hero-overlay bg-opacity-10"></div>
+  <div className="hero-content text-center text-neutral-content">
+    <div className="max-w-md">
+      <h1 className="mb-5 text-5xl font-bold text-white">Hey Buddy</h1>
+      <p className="mb-5 text-white font-bold">ARE YOU LOOKING FOR A CAR ON RENT ???
+THEN YOU ARE AT THE RIGHT PLACE.
+HI.. I'M MEHEDI HASAN,I HAVE VARIETIES OF CARS.
+FROM HERE YOU CAN RENT CARS AT BEST RATES.</p>
+      
+    </div>
+  </div>
+</div>
 
       <div className="divider"></div>
       {/* --------------------------------------------------------------------- */}
@@ -33,7 +36,7 @@ const Home = () => {
           ))}
         </div>
         <div className='w-full text-center pb-14'>
-          <Link to="/service"><button className="btn btn-outline btn-warning btn-wide">
+          <Link to="/service"><button  className="bg-amber-500 hover:bg-amber-600 text-white btn border-none btn-wide">
             See more Cars
           </button></Link>
         </div>
@@ -74,24 +77,27 @@ const Home = () => {
 
       <div className="divider"></div>
 
-      <div className="my-14 mb-10">
+      <div className="my-14 mb-32">
         <h5 className="pt-10">----TESTIMONIALS</h5>
         <h1 className="text-3xl font-bold pb-8">
           Real Happy Customers, Real Stories
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="mt-9 text-2xl italic w-10/12">
+        <div className="grid flex grid-cols-1 md:grid-cols-2">
+          <div className="mt-9 text-2xl italic w-10/12 items-center pl-16">
             <h6 className="">
               Taxseco car rental service was really a good experience for me.
               The car was exactly what I required and the condition was really
-              top-class. I'll certainly get car rental from Sheba.xyz in future.
+              top-class. I'll certainly get car rental from Rentalco in future.
             </h6>
             <p className="mt-5">
               <small> Md. Haider Ali</small>
             </p>
           </div>
-          <img className="rounded-xl w-full" src={man} alt="" />
+          <div className='w-full'>
+            <img className="rounded-xl w-9/12 mx-auto" src={man} alt="" />
+          </div>
+          
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ const SingleService = ({service}) => {
            
     <PhotoProvider>
       <PhotoView src={picture}>
-        <img src={picture} alt="" />
+        <img className='h-[280px] , w-full' src={picture} alt="" />
       </PhotoView>
     </PhotoProvider>
 

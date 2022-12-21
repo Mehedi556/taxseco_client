@@ -38,7 +38,7 @@ const AddService = () => {
   };
 
   return (
-    <form className="my-14" onSubmit={handleAddService}>
+    <form className="my-14 h-screen" onSubmit={handleAddService}>
       <div className="text-center grid grid-cols-1 w-6/12 mx-auto gap-2">
         <input
           type="text"

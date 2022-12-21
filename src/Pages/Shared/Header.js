@@ -13,9 +13,11 @@ const Header = () => {
     .catch(error => console.error(error))
   }
 
+
+
   return (
     <div
-      style={{ backgroundColor: 'rgb(255 175 52)' }}
+     style={{ backgroundColor: 'rgb(255 175 52)' }}
       className="navbar bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
