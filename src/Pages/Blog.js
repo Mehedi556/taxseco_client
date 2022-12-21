@@ -3,7 +3,7 @@ import React from 'react';
 const Blog = () => {
     return (
       <div>
-      <div className="w-10/12 mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 p-5 mt-10 rounded-2xl">
+      <div className=" mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 p-5 mt-10 rounded-2xl">
         {/* -------- */}
         <div
           tabIndex={0}
