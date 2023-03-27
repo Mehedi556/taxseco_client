@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const SingleService = ({service}) => {
     const {_id , name , Price , picture} = service;
   return (
-    <div className='border border-solid border-slate-400 rounded-xl p-3'>
+    <div className='border border-solid border-amber-500 rounded-xl p-3'>
            
     <PhotoProvider>
       <PhotoView src={picture}>
@@ -18,7 +18,7 @@ const SingleService = ({service}) => {
                 <h1><span className='font-bold'>Name: </span>{name}</h1>
                 <h1><span className='font-bold'>Per Day: </span>{Price}$</h1>
                 </div>
-                <Link to ={`/service/${_id}`}><button className="btn btn-ghost btn-outline w-[100%] justify-center">View Details</button></Link>
+                <Link to ={`/service/${_id}`}><button className="btn bg-amber-500 hover:bg-amber-600 border-none w-[100%] justify-center">View Details</button></Link>
 
         </div>
   );

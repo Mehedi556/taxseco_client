@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, Navigate, useLoaderData, useLocation } from 'react-router-dom';
+import { Link, useLoaderData, } from 'react-router-dom';
 import { AuthContext } from '../Contexts/AuthProvider';
 import ReviewRow from './ReviewRow';
 
 const ServiceDetails = () => {
   const { user } = useContext(AuthContext);
-  const location = useLocation();
+  // const location = useLocation();
   const detail = useLoaderData();
   const { name, picture, Price, about, _id } = detail;
   // console.log(detail);
@@ -29,7 +29,6 @@ const ServiceDetails = () => {
       image,
       message,
     };
-
     fetch('https://taxseco-server.vercel.app/reviews', {
       method: 'POST',
       headers: {
@@ -58,7 +57,7 @@ const ServiceDetails = () => {
     <div className="mx-auto">
       <div className="w-3/4 glass mx-auto mt-12">
         <figure className="w-4/4">
-          <img className="w-full" src={picture} />
+          <img className="w-full" src={picture} alt="" />
         </figure>
         <div className="card-body">
           <h2 className="card-title text-black text-3xl">{name}</h2>
